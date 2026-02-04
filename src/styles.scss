@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'normalize.css';
+@import '../src/app/styles/inter/inter.css';
+
+:root{
+    --white: #FFFFFF;
+    --black: #000000;
+    --textColor: #000000;
+    --card: #F6F6F6;
+    --description: #909090;
+    --homeGrey: #EDEDED;
+    --secondarySurface: #FAFAFA;
+    --greyOne: #F9F9F9;
+    --greyTwo: #EAEAEA;
+    --gretThree: #2C2C2C;
+    --footerLinks: #CFCFCF;
+    --sectionsLinks: #A4A4A4;
+    --filterBorder: #D4D4D4;
+    --detailsBorder: #CDCDCD;
+    --productsDescription: #6C6C6C;
+    --paySummary: #EBEBEB;
+    --inputBorder: #CECECE;
+    --placeholderPay: #979797;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'inter';
+    font-size: 1.6rem;
+    background-color: var(--white);
+}
