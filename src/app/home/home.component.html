@@ -1,0 +1,17 @@
+<main>
+
+    <article class="landing__container">
+        @if(producto$ | async; as product){
+        <div class="landing__container--text">
+            @if(titleParts$ | async; as title){
+            <h1> {{title.restTitle}} <span> {{title.lastWord}} </span> </h1>
+            <p class="text--description"> {{product.description}} </p>
+            }
+            <button class="btn--shopNow">Shop Now</button>
+        </div>
+        <div class="landing__container--img">
+            <img [src]="product.image" [alt]="product.title" fetchpriority="high" loading="lazy">
+        </div>
+        }
+    </article>
+</main>
