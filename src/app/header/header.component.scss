@@ -1,0 +1,52 @@
+header{
+    position: relative;
+    padding: 2.4rem 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a{
+    color: var(--black);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.icon{
+    font-size: 3rem;
+}
+
+.mobile__menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: red;
+    height: 100dvh;
+    display: none;
+}
+
+.elements__container{
+    display: flex;
+    flex-direction: column;
+    .back{
+        border-bottom: 1px solid var(--greyTwo);
+        margin-bottom: 3rem;
+        padding: 1.6rem;
+        .btn__back{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+    }
+
+    a{
+        margin: 0 0 2rem 1.6rem;
+    }
+}
