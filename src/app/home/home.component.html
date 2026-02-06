@@ -1,5 +1,4 @@
 <main>
-
     <article class="landing__container">
         @if(producto$ | async; as product){
         <div class="landing__container--text">
@@ -13,5 +12,48 @@
             <img [src]="product.image" [alt]="product.title" fetchpriority="high" loading="lazy">
         </div>
         }
+    </article>
+
+    <article class="fourProducts__container">
+        @if (fourProducts$ | async; as producto) {
+        <div class="fourProducts__elements primero">
+            <div class="fourProducts__elements--img">
+                <img [src]="producto[0].image" [alt]="producto[0].image">
+            </div>
+            <div class="fourProducts__elements--text">
+                <p class="title primero">{{producto[0].titulo.rest}} <span> {{producto[0].titulo.last}} </span></p>
+                <p class="description primero"> {{producto[0].description}} </p>
+            </div>
+        </div>
+        <div class="fourProducts__elements segundo">
+            <div class="fourProducts__elements--img">
+                <img [src]="producto[1].image" [alt]="producto[1].image">
+            </div>
+            <div class="fourProducts__elements--text">
+                <p class="title segundo">{{producto[1].titulo.rest}} <span> {{producto[1].titulo.last}} </span></p>
+                <p class="description segundo"> {{producto[1].description}} </p>
+            </div>
+        </div>
+        <div class="fourProducts__elements tercero">
+            <div class="fourProducts__elements--img">
+                <img [src]="producto[2].image" [alt]="producto[2].image">
+            </div>
+            <div class="fourProducts__elements--text">
+                <p class="title tercero">{{producto[2].titulo.rest}} <span> {{producto[2].titulo.last}} </span></p>
+                <p class="description tercero"> {{producto[2].description}} </p>
+            </div>
+        </div>
+        <div class="fourProducts__elements cuarto">
+            <div class="fourProducts__elements--img">
+                <img [src]="producto[3].image" [alt]="producto[3].image">
+            </div>
+            <div class="fourProducts__elements--text">
+                <p class="title cuarto">{{producto[3].titulo.rest}} <span> {{producto[3].titulo.last}} </span></p>
+                <p class="description cuarto"> {{producto[3].description}} </p>
+            </div>
+            <button class="btnLastItem"> Shop Now</button>
+        </div>
+        }
+
     </article>
 </main>

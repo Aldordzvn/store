@@ -13,7 +13,7 @@
     --lineal : #211C24;
     --greyOne: #F9F9F9;
     --greyTwo: #EAEAEA;
-    --gretThree: #2C2C2C;
+    --greyThree: #2C2C2C;
     --footerLinks: #CFCFCF;
     --sectionsLinks: #A4A4A4;
     --filterBorder: #D4D4D4;
@@ -33,4 +33,8 @@ body {
     font-family: 'inter';
     font-size: 1.6rem;
     background-color: var(--white);
+}
+
+button{
+    cursor: pointer;
 }

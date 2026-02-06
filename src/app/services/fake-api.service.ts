@@ -8,16 +8,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FakeApiService {
   private readonly api = 'https://fakestoreapi.com/products';
-  private productos$ : BehaviorSubject<Producto[]> = new BehaviorSubject<Producto[]>([]);
+  
 
   constructor(private httpClient: HttpClient) {
    }
 
   getProducts() : Observable<Producto[]>{
-    return this.httpClient.get<Producto[]>(this.api).pipe(
-      tap(res => this.productos$.next(res)),
-      tap(()=> console.log(this.api))
-    );
+    return this.httpClient.get<Producto[]>(this.api);
   }
 
   getProductsById(id: number) : Observable<Producto>{

@@ -1,29 +1,33 @@
-.landing__container{
+.landing__container {
     background-color: var(--lineal);
     padding: 8.8rem 1.6rem 0;
 }
 
-.landing__container--text{
+.landing__container--text {
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
+
     h1 {
         color: var(--white);
         font-size: 7.2rem;
         font-weight: 100;
         margin: 1.6rem 0;
-        & span{
+
+        & span {
             font-weight: 600;
         }
     }
-    .text--description{
+
+    .text--description {
         font-size: 1.9rem;
         color: var(--description);
         margin: 0;
     }
-    .btn--shopNow{
+
+    .btn--shopNow {
         font-size: 1.6rem;
         font-weight: 500;
         color: var(--white);
@@ -34,7 +38,8 @@
         border-radius: 6px;
         margin-top: 3.2rem;
         cursor: pointer;
-        &:hover{
+
+        &:hover {
             color: var(--black);
             background-color: var(--white);
             font-weight: 600;
@@ -42,12 +47,112 @@
     }
 }
 
-.landing__container--img{
+.landing__container--img {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 4.8rem;
-    img{
+
+    img {
         width: 32.1rem;
     }
+}
+
+.fourProducts__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.fourProducts__elements {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 1.6rem;
+    // max-width: 37.5rem;
+
+    &.primero {
+        background-color: var(--homeGrey);
+    }
+
+    &.segundo {
+        background-color: var(--greyThree);
+    }
+
+    &.tercero {
+        background-color: var(--white);
+    }
+
+    &.cuarto {
+        background-color: var(--homeGrey);
+
+        .btnLastItem {
+            margin-top: 1.6rem;
+            border: 1px solid var(--black);
+            font-size: 1.6rem;
+            background-color: transparent;
+            height: 5.6rem;
+            border-radius: 6px;
+
+            &:hover {
+                background-color: var(--black);
+                color: var(--white);
+            }
+        }
+    }
+
+    .fourProducts__elements--img {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2.4rem;
+
+        img {
+            width: 80%;
+            aspect-ratio: 1/1;
+            object-fit: contain;
+        }
+    }
+
+    .fourProducts__elements--text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .title {
+            font-size: 3.5rem;
+            margin: 0;
+            margin-bottom: 0.8rem;
+            font-weight: 300;
+            &.primero,
+            &.tercero,
+            &.cuarto {
+                color: var(--black);
+            }
+
+            &.primero,
+            &.segundo,
+            &.tercero {
+                span{
+                    font-weight: 500;
+                }
+            }
+
+            &.segundo {
+                color: var(--white);
+            }
+
+            &.cuarto{
+                font-weight: 500;
+                span{
+                    font-weight: 300;
+                }
+            }
+        }
+
+        .description {
+            color: var(--description);
+            margin: 0;
+        }
+    }
+
 }
