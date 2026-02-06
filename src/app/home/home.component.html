@@ -56,4 +56,30 @@
         }
 
     </article>
+
+    <article class="browse__container">
+        <div class="browse__category">
+            <p>Browse By Category</p>
+        </div>
+        @if(categories$ | async; as categoria){
+        <div class="browse__cards">
+            <a class="card">
+                <fa-icon class="icon" [icon]="elecIcon"></fa-icon>
+                <p class="category"> {{categoria[0]}} </p>
+            </a>
+            <a class="card">
+                <fa-icon class="icon" [icon]="jewelIcon"></fa-icon>
+                <p class="category"> {{categoria[1]}} </p>
+            </a>
+            <a class="card">
+                <fa-icon class="icon" [icon]="menIcon"></fa-icon>
+                <p class="category"> {{categoria[2]}} </p>
+            </a>
+            <a class="card">
+                <fa-icon class="icon" [icon]="womenIcon"></fa-icon>
+                <p class="category"> {{categoria[3]}} </p>
+            </a>
+        </div>
+        }
+    </article>
 </main>

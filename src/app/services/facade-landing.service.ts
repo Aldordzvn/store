@@ -3,6 +3,7 @@ import { FakeApiService } from './fake-api.service';
 import { forkJoin, map, Observable, Subject, tap } from 'rxjs';
 import { Producto } from '../model/producto.model';
 import { ProductoTitulo } from '../model/ProductoTitulo.model';
+import { Category } from '../model/category.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class FacadeLandingService {
   titleParts$: Observable<{ restTitle: string; lastWord: string }>;
   private readonly PRODUCTOSID = [3, 8, 12, 18];
   readonly exhibitionProducts: Observable<(Producto & {titulo: ProductoTitulo})[]>;
+  categories$: Observable<Category[]>;
 
   constructor(private fakeApi: FakeApiService) {
     this.producto$ = fakeApi.getProductsById(this.productLanding);
@@ -33,6 +35,8 @@ export class FacadeLandingService {
         productos.map(p => ({...p, titulo: this.separarTitulo(p.title)}))
       )
     );
+
+    this.categories$ = fakeApi.getCategories();
   }
 
   private separarTitulo(title: string): ProductoTitulo {
