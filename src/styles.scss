@@ -10,10 +10,11 @@
     --description: #909090;
     --homeGrey: #EDEDED;
     --secondarySurface: #FAFAFA;
+    --lineal : #211C24;
     --greyOne: #F9F9F9;
     --greyTwo: #EAEAEA;
-    --gretThree: #2C2C2C;
-    --footerLinks: #CFCFCF;
+    --greyThree: #2C2C2C;
+    --textFooter: #CFCFCF;
     --sectionsLinks: #A4A4A4;
     --filterBorder: #D4D4D4;
     --detailsBorder: #CDCDCD;
@@ -32,4 +33,8 @@ body {
     font-family: 'inter';
     font-size: 1.6rem;
     background-color: var(--white);
+}
+
+button{
+    cursor: pointer;
 }
