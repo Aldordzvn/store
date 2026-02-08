@@ -24,6 +24,7 @@ export class HomeComponent {
   // productosExhibicion$ : Observable<Producto[]>;
   fourProducts$ : Observable<(Producto & {titulo: ProductoTitulo})[]>;
   categories$: Observable<Category[]>;
+  productsRating: Observable<Producto[]>
 
   constructor(private facadeLanding: FacadeLandingService) {
     this.producto$ = this.facadeLanding.producto$;
@@ -31,6 +32,8 @@ export class HomeComponent {
     // this.productosExhibicion$ = this.facadeLanding.exhibitionProducts;
     this.fourProducts$ = this.facadeLanding.exhibitionProducts;
     this.categories$ = facadeLanding.categories$;
+    this.productsRating = facadeLanding.bestRating$;
   }
 
+  
 }

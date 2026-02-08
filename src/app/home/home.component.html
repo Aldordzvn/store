@@ -82,4 +82,20 @@
         </div>
         }
     </article>
+    <article class="rating__container">
+        <div class="rating__title">
+            <p>Best Rating</p>
+        </div>
+
+        <div class="rating__products">
+            @for (producto of productsRating |async; track $index) {
+            <div class="card">
+                <img [src]="producto.image" [alt]="producto.title">
+                <p class="title"> {{producto.title}} </p>
+                <p class="price"> {{producto.price | currency: 'MXN':'symbol-narrow' : '1.2-2'}} </p>
+                <button>Buy Now</button>
+            </div>
+            }
+        </div>
+    </article>
 </main>

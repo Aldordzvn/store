@@ -15,6 +15,8 @@ export class FacadeLandingService {
   private readonly PRODUCTOSID = [3, 8, 12, 18];
   readonly exhibitionProducts: Observable<(Producto & {titulo: ProductoTitulo})[]>;
   categories$: Observable<Category[]>;
+  readonly bestRating$: Observable<Producto[]>;
+  private readonly MIN_RATING = 4;
 
   constructor(private fakeApi: FakeApiService) {
     this.producto$ = fakeApi.getProductsById(this.productLanding);
@@ -37,6 +39,10 @@ export class FacadeLandingService {
     );
 
     this.categories$ = fakeApi.getCategories();
+
+    this.bestRating$ = fakeApi.getProducts().pipe(
+      map(productos => productos.filter(p => p.rating?.rate >= this.MIN_RATING))
+    );
   }
 
   private separarTitulo(title: string): ProductoTitulo {

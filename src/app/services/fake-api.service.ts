@@ -17,7 +17,6 @@ export class FakeApiService {
   getProducts() : Observable<Producto[]>{
     return this.httpClient.get<Producto[]>(this.api);
   }
-
   getProductsById(id: number) : Observable<Producto>{
     return this.httpClient.get<Producto>(`${this.api}/${id}`);
   }
