@@ -24,5 +24,9 @@ export class FakeApiService {
   getCategories() : Observable<Category[]>{
     return this.httpClient.get<Category[]>(`${this.api}/categories`);
   }
+
+  getProductByCategory(category: string){
+    return this.httpClient.get<Producto[]>(`${this.api}/category/${category}`);
+  }
   
 }

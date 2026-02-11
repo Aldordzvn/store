@@ -16,7 +16,7 @@
             <img [src]="producto.image" [alt]="producto.title">
             <p class="title"> {{producto.title}} </p>
             <p class="price"> {{producto.price | currency: 'MXN' : 'symbol-narrow' : '1.2-2'}} </p>
-            <button class="btnBuyNow">Buy Now</button>
+            <button class="btnBuyNow" [routerLink]="['/productDetail', producto.id]">Buy Now</button>
         </div>
         }
     </article>

@@ -7,10 +7,11 @@ import { ProductoTitulo } from '../model/ProductoTitulo.model';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLaptop, faGem, faPerson, faPersonDress } from '@fortawesome/free-solid-svg-icons';
 import { Category } from '../model/category.model';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -26,7 +27,7 @@ export class HomeComponent {
   categories$: Observable<Category[]>;
   productsRating: Observable<Producto[]>
 
-  constructor(private facadeLanding: FacadeLandingService) {
+  constructor(private facadeLanding: FacadeLandingService, private router: Router) {
     this.producto$ = this.facadeLanding.producto$;
     this.titleParts$ = this.facadeLanding.titleParts$;
     // this.productosExhibicion$ = this.facadeLanding.exhibitionProducts;

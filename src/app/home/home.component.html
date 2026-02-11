@@ -6,7 +6,7 @@
             <h1> {{title.restTitle}} <span> {{title.lastWord}} </span> </h1>
             <p class="text--description"> {{product.description}} </p>
             }
-            <button class="btn--shopNow">Shop Now</button>
+            <button class="btn--shopNow" [routerLink]="['/productDetail', product.id]">Shop Now</button>
         </div>
         <div class="landing__container--img">
             <img [src]="product.image" [alt]="product.title" fetchpriority="high" loading="lazy">
@@ -51,7 +51,7 @@
                 <p class="title cuarto">{{producto[3].titulo.rest}} <span> {{producto[3].titulo.last}} </span></p>
                 <p class="description cuarto"> {{producto[3].description}} </p>
             </div>
-            <button class="btnLastItem"> Shop Now</button>
+            <button class="btnLastItem" [routerLink]="['/productDetail', producto[3].id]"> Shop Now</button>
         </div>
         }
 
@@ -93,7 +93,7 @@
                 <img [src]="producto.image" [alt]="producto.title">
                 <p class="title"> {{producto.title}} </p>
                 <p class="price"> {{producto.price | currency: 'MXN':'symbol-narrow' : '1.2-2'}} </p>
-                <button>Buy Now</button>
+                <button [routerLink]="['/productDetail', producto.id]">Buy Now</button>
             </div>
             }
         </div>

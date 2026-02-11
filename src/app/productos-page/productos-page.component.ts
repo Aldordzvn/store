@@ -5,10 +5,11 @@ import { FacadeProductsPageService } from '../services/productsPage/facade-produ
 import { Observable } from 'rxjs';
 import { Producto } from '../model/producto.model';
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-productos-page',
-  imports: [FontAwesomeModule, CommonModule],
+  imports: [FontAwesomeModule, CommonModule, RouterLink],
   templateUrl: './productos-page.component.html',
   styleUrl: './productos-page.component.scss'
 })
@@ -20,7 +21,7 @@ export class ProductosPageComponent {
   filterBoolean : boolean = false;
   productos$: Observable<Producto[]>;
 
-  constructor(private facadeProducts: FacadeProductsPageService) {
+  constructor(private facadeProducts: FacadeProductsPageService, private router: Router) {
     this.productos$ = facadeProducts.filteredProducts$;
   }
 
@@ -47,4 +48,8 @@ export class ProductosPageComponent {
     this.categoryBoolean = false;
     document.body.style.overflow = '';
   }
+
+  // toProductDetail(productId: number){
+  //   this.router.navigate(['/product', productId])
+  // }
 }
