@@ -4,7 +4,7 @@
         <img [src]="producto.image" [alt]="producto.title">
         <h1 class="title"> {{producto.title}} </h1>
         <p class="price"> {{producto.price | currency: 'MXN' : 'symbol-narrow' : '1.2-2'}} </p>
-        <button>Add to Cart</button>
+        <button (click)="addProductoToCart(producto)">Add to Cart</button>
     </article>
     <article class="details__container">
         <h2>Details</h2>
@@ -20,7 +20,7 @@
             <img [src]="producto.image" [alt]="producto.title">
             <p class="title"> {{producto.title}} </p>
             <p class="price"> {{producto.price | currency: 'MXN' : 'symbol-narrow' : '1.2-2'}} </p>
-            <button class="btnBuyNow">Buy Now</button>
+            <button class="btnBuyNow" (click)="toProductDetail(producto.id!)">Buy Now</button>
         </div>
         }
     </article>
