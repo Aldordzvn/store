@@ -1,15 +1,15 @@
 <header>
-    <a href="#">Ecommerce</a>
-    <button class="btnHamburguer"> <fa-icon class="icon menu" [icon]="menuIcon"></fa-icon> </button>
+    <a [routerLink]="['/']">Ecommerce</a>
+    <button class="btnHamburguer" (click)="openMenu()"> <fa-icon class="icon menu" [icon]="menuIcon"></fa-icon> </button>
 
-    <div class="mobile__menu">
+    <div class="mobile__menu" [class.slideInRight]="menuToggle" [class.slideOutRight]="!menuToggle && hasInteracted">
         <div class="elements__container">
             <div class="back">
-                <button class="btn__back"> <fa-icon class="icon backI" [icon]="backIcon"></fa-icon> SALIR </button>
+                <button class="btn__back" (click)="openMenu()"> <fa-icon class="icon backI" [icon]="backIcon"></fa-icon> SALIR </button>
             </div>
-            <a href="#" class="link">Home</a>
-            <a href="#" class="link">Productos</a>
-            <a href="#" class="link">About</a>
+            <a [routerLink]="['/home']" class="link" (click)="openMenu()">Home</a>
+            <a [routerLink]="['/products']" class="link" (click)="openMenu()">Products</a>
+            <a [routerLink]="['/cart']" class="link" (click)="openMenu()">Cart</a>
         </div>
     </div>
 </header>

@@ -6,7 +6,9 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 export const routes: Routes = [
     {path: "", component: HomeComponent},
+    {path: "home", component: HomeComponent},
     {path: "products", component: ProductosPageComponent},
+    {path: "products/:category", component: ProductosPageComponent},
     {path: "productDetail/:id", loadComponent: () => import('./products-detail/products-detail.component').then(m => m.ProductsDetailComponent)},
     {path: "cart", component: ShoppingCartComponent}
 ];

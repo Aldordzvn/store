@@ -35,11 +35,19 @@
             <p> {{total | currency: 'MXN' : 'symbol-narrow'}} </p>
         </div>
         }
-        <button class="checkout">Checkout</button>
+        <button class="checkout" (click)="buyCompleteModal()">Checkout</button>
     </article>
     }
     }
 
 
-
+    <div class="modal__success" [class.active]="openModal">
+        <div class="success__container">
+            <div class="success__text">
+                <fa-icon class="icon check" [icon]="checkIcon"></fa-icon>
+                <h2>¡thank you for your purchase!</h2>
+            </div>
+            <button (click)="buyCompleteModal()">Aceptar</button>
+        </div>
+    </div>
 </main>

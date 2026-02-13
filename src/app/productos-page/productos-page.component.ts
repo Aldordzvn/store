@@ -5,7 +5,7 @@ import { FacadeProductsPageService } from '../services/productsPage/facade-produ
 import { Observable } from 'rxjs';
 import { Producto } from '../model/producto.model';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-productos-page',
@@ -21,8 +21,20 @@ export class ProductosPageComponent {
   filterBoolean : boolean = false;
   productos$: Observable<Producto[]>;
 
-  constructor(private facadeProducts: FacadeProductsPageService, private router: Router) {
+  constructor(public facadeProducts: FacadeProductsPageService, private route: ActivatedRoute, private router: Router) {
     this.productos$ = facadeProducts.filteredProducts$;
+  }
+
+  ngOnInit(){
+    this.route.paramMap.subscribe(params => {
+      const category = params.get('category');
+      if(category){ this.facadeProducts.initializeCategory(category);}
+    });
+  }
+
+  ngOnDestroy(){
+    this.facadeProducts.resetState();
+    document.body.style.overflow = '';
   }
 
   openCategoryModal(){

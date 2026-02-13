@@ -28,22 +28,22 @@
         </div>
         <div class="options__container">
             <label>
-                <input type="checkbox" (change)="onCheckBoxChange('electronics')" />
+                <input type="checkbox" (change)="onCheckBoxChange('electronics')" [checked]="facadeProducts.isCategorySelected('electronics')" />
                 Electronics
             </label>
 
             <label>
-                <input type="checkbox" (change)="onCheckBoxChange('jewelery')" />
+                <input type="checkbox" (change)="onCheckBoxChange('jewelery')" [checked]="facadeProducts.isCategorySelected('jewelery')"/>
                 Jewelery
             </label>
 
             <label>
-                <input type="checkbox" (change)="onCheckBoxChange(`men's clothing`)" />
+                <input type="checkbox" (change)="onCheckBoxChange(`men's clothing`)" [checked]="facadeProducts.isCategorySelected(`men's clothing`)"/>
                 Men's clothing
             </label>
 
             <label>
-                <input type="checkbox" (change)="onCheckBoxChange(`women's clothing`)" />
+                <input type="checkbox" (change)="onCheckBoxChange(`women's clothing`)" [checked]="facadeProducts.isCategorySelected(`women's clothing`)"/>
                 Women's clothing
             </label>
             <button (click)="onApply()"> Apply </button>

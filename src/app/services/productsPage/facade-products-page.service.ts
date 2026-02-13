@@ -28,6 +28,7 @@ export class FacadeProductsPageService {
     } else{
       this.selectedCategories.add(category);
     }
+    this.applyFilter();
   }
 
   setSort(sort: SortOption){
@@ -75,4 +76,21 @@ export class FacadeProductsPageService {
     })
   }
 
+  initializeCategory(category: string){
+    this.selectedCategories.clear();
+    this.selectedCategories.add(category);
+    this.applyFilter();
+  }
+  
+  isCategorySelected(category: string): boolean {
+    return this.selectedCategories.has(category);
+  }
+
+  resetState(){
+    this.selectedCategories.clear();
+    this.selecetFilter = null
+    this.allProducts$.pipe(take(1)).subscribe(products =>{
+      this.filteredProductsSubject.next(products);
+    });
+  }
 }

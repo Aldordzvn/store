@@ -63,19 +63,19 @@
         </div>
         @if(categories$ | async; as categoria){
         <div class="browse__cards">
-            <a class="card">
+            <a [routerLink]="['/products', categoria[0]]" class="card">
                 <fa-icon class="icon" [icon]="elecIcon"></fa-icon>
                 <p class="category"> {{categoria[0]}} </p>
             </a>
-            <a class="card">
+            <a [routerLink]="['/products', categoria[1]]" class="card">
                 <fa-icon class="icon" [icon]="jewelIcon"></fa-icon>
                 <p class="category"> {{categoria[1]}} </p>
             </a>
-            <a class="card">
+            <a [routerLink]="['/products', categoria[2]]" class="card">
                 <fa-icon class="icon" [icon]="menIcon"></fa-icon>
                 <p class="category"> {{categoria[2]}} </p>
             </a>
-            <a class="card">
+            <a [routerLink]="['/products', categoria[3]]" class="card">
                 <fa-icon class="icon" [icon]="womenIcon"></fa-icon>
                 <p class="category"> {{categoria[3]}} </p>
             </a>
