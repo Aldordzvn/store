@@ -50,8 +50,9 @@
             <div class="fourProducts__elements--text">
                 <p class="title cuarto">{{producto[3].titulo.rest}} <span> {{producto[3].titulo.last}} </span></p>
                 <p class="description cuarto"> {{producto[3].description}} </p>
+                <button class="btnLastItem" [routerLink]="['/productDetail', producto[3].id]"> Shop Now</button>
+
             </div>
-            <button class="btnLastItem" [routerLink]="['/productDetail', producto[3].id]"> Shop Now</button>
         </div>
         }
 
