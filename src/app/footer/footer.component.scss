@@ -1,3 +1,5 @@
+@import '../styles/mixins';
+
 footer{
     background-color: var(--black);
     padding: 4.8rem 3.2rem;
@@ -33,3 +35,8 @@ a{
     gap: 2.5rem;
 }
 
+@include desktop{
+    footer{
+        padding: 10.4rem 16rem;
+    }
+}
