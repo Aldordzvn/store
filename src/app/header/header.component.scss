@@ -1,9 +1,15 @@
+@import '../styles/mixins';
+
 header {
     position: relative;
     padding: 2.4rem 1.6rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.desktop__container{
+    display: none;
 }
 
 a {
@@ -123,5 +129,25 @@ button {
         visibility: hidden;
         -webkit-transform: translateX(100%);
         transform: translateX(100%);
+    }
+}
+
+@include desktop {
+    .mobile__container {
+        display: none;
+    }
+
+    .desktop__container{
+        display: flex;
+    }
+
+    header{
+        padding: 1.6rem 16rem;
+    }
+
+    .components__container{
+        display: flex;
+        justify-content: center;
+        gap: 5rem;
     }
 }

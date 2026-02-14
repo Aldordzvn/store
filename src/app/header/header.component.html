@@ -1,4 +1,4 @@
-<header>
+<header class="mobile__container">
     <a [routerLink]="['/']">Ecommerce</a>
     <button class="btnHamburguer" (click)="openMenu()"> <fa-icon class="icon menu" [icon]="menuIcon"></fa-icon> </button>
 
@@ -12,4 +12,14 @@
             <a [routerLink]="['/cart']" class="link" (click)="openMenu()">Cart</a>
         </div>
     </div>
+</header>
+
+<header class="desktop__container">
+    <a [routerLink]="['/']">Ecommerce</a>
+    <div class="components__container">
+        <a [routerLink]="['/']">Home</a>
+        <a [routerLink]="['/products']">Products</a>
+    </div>
+
+    <a [routerLink]="['/cart']"> <fa-icon class="icon cart" [icon]="cartIcon"></fa-icon> </a>
 </header>
