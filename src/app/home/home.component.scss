@@ -107,6 +107,7 @@
         margin-bottom: 2.4rem;
 
         img {
+            max-width: 32rem;
             width: 80%;
             aspect-ratio: 1/1;
             object-fit: contain;
@@ -288,6 +289,10 @@
 }
 
 @include desktop {
+    main{
+        max-width: 144rem;
+        margin: 0 auto;
+    }
     .landing__container {
         display: flex;
         padding: 0 5rem;
@@ -377,7 +382,7 @@
 
         &.segundo,
         &.tercero {
-            height: 27.2rem;
+            height: auto;
         }
 
         &.tercero {
@@ -492,3 +497,27 @@
         }
     }
 }
+
+@include desktopL{
+    main{
+        max-width: max-content;
+        min-width: 144.1rem;
+    }
+
+    .rating__products{
+        grid-template-columns: repeat(7, 1fr);
+    }
+}
+
+@include tablet{
+
+    .browse__cards{
+        max-width: 42.5rem;
+        margin: 0 auto;
+    }
+    .rating__products{
+        max-width: 42.5rem;
+        margin: 0 auto;
+    }
+}
+

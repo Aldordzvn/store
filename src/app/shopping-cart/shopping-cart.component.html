@@ -1,44 +1,48 @@
 <main>
-    <h2>Shopping Cart</h2>
-    @if(productos | async; as cart){
-    @if (cart.length === 0) {
-    <div class="empty__container">
-        <p>¡Cart Empty!</p>
-    </div>
-    }@else {
-    <article class="cards__container">
-        @for (item of productos | async; track $index) {
-        <div class="card">
-            <img [src]="item.product.image" [alt]="item.product.title">
-            <div class="card__info">
-                <p class="title"> {{item.product.title}} </p>
-                <div class="card__container--opc">
-                    <div class="count__container">
-                        <button class="btn minus" (click)="decreaseProduct(item.product.id!)"> - </button>
-                        <input type="number" value="{{item.quantity}}" disabled>
-                        <button class="btn plus" (click)="increaseProduct(item.product.id!)"> + </button>
+    <div class="cart__container">
+        @if(productos | async; as cart){
+        @if (cart.length === 0) {
+        <div class="empty__container">
+            <p>¡Cart Empty!</p>
+        </div>
+        }@else {
+        <div class="cart__elements">
+            <article class="cards__container">
+                <h2>Shopping Cart</h2>
+                @for (item of productos | async; track $index) {
+                <div class="card">
+                    <img [src]="item.product.image" [alt]="item.product.title">
+                    <div class="card__info">
+                        <p class="title"> {{item.product.title}} </p>
+                        <div class="card__container--opc">
+                            <div class="count__container">
+                                <button class="btn minus" (click)="decreaseProduct(item.product.id!)"> - </button>
+                                <input type="number" value="{{item.quantity}}" disabled>
+                                <button class="btn plus" (click)="increaseProduct(item.product.id!)"> + </button>
+                            </div>
+                            <p class="price"> {{item.totalPrice | currency: 'MXN' : 'symbol-narrow'}} </p>
+                            <button class="quit" (click)="deleteProduct(item.product.id!)"> <fa-icon
+                                    class="icon quitMark" [icon]="quitIcon"></fa-icon> </button>
+                        </div>
                     </div>
-                    <p class="price"> {{item.totalPrice | currency: 'MXN' : 'symbol-narrow'}} </p>
-                    <button class="quit" (click)="deleteProduct(item.product.id!)"> <fa-icon class="icon quitMark"
-                            [icon]="quitIcon"></fa-icon> </button>
                 </div>
-            </div>
-        </div>
-        }
-    </article>
+                }
+            </article>
 
-    <article class="summary__container">
-        <h3>Order Summary</h3>
-        @if(totalPrice$ | async; as total){
-        <div class="label__container total">
-            <p>Total</p>
-            <p> {{total | currency: 'MXN' : 'symbol-narrow'}} </p>
+            <article class="summary__container">
+                <h3>Order Summary</h3>
+                @if(totalPrice$ | async; as total){
+                <div class="label__container total">
+                    <p>Total</p>
+                    <p> {{total | currency: 'MXN' : 'symbol-narrow'}} </p>
+                </div>
+                }
+                <button class="checkout" (click)="buyCompleteModal()">Checkout</button>
+            </article>
         </div>
         }
-        <button class="checkout" (click)="buyCompleteModal()">Checkout</button>
-    </article>
-    }
-    }
+        }
+    </div>
 
 
     <div class="modal__success" [class.active]="openModal">

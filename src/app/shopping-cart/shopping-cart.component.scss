@@ -1,3 +1,5 @@
+@import '../styles/mixins';
+
 main {
     padding: 4rem 1.6rem;
     display: flex;
@@ -174,4 +176,50 @@ main {
             background-color: var(--success);
         }
     }
+}
+
+@include desktop{
+    main{
+        max-width: 144rem;
+        height: 100dvh;
+        margin: 0 auto;
+    }
+
+    .cart__container{
+    }
+
+    .cart__elements{
+        max-width: 112rem;
+        margin: 0 auto;
+        display: flex;
+        gap: 4.8rem;
+        justify-content: center;
+    }
+
+    .cards__container{
+        max-width: 53.6rem;
+        height: 55.6rem;
+        overflow: auto;
+    }
+
+    .card{
+        .card__info{
+            flex-direction: row;
+            .card__container--opc{
+                gap: 2rem;
+            }
+        }
+    }
+
+    .summary__container{
+        max-width: 53.6rem;
+        padding: 5.6rem 6.4rem;
+        justify-content: center;
+        .label__container{
+            &.total{
+                margin-bottom: 0;
+            }
+        }
+    }
+
 }

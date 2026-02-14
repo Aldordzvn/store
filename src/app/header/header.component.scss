@@ -1,14 +1,10 @@
 @import '../styles/mixins';
 
-header {
-    position: relative;
-    padding: 2.4rem 1.6rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+header{
+    
 }
 
-.desktop__container{
+.desktop__container {
     display: none;
 }
 
@@ -28,6 +24,14 @@ button {
     font-size: 3rem;
 }
 
+.mobile__container {
+    position: relative;
+    padding: 2.4rem 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .mobile__menu {
     position: fixed;
     inset: 0;
@@ -42,7 +46,7 @@ button {
 .elements__container {
     display: flex;
     flex-direction: column;
-
+    width: 100%;
     .back {
         border-bottom: 2px solid var(--greyTwo);
         margin-bottom: 3rem;
@@ -133,21 +137,31 @@ button {
 }
 
 @include desktop {
+    header{
+        max-width: 144rem;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.6rem;
+    }
     .mobile__container {
         display: none;
     }
 
     .desktop__container{
+        max-width: 102.4rem;
+        width: 100%;
         display: flex;
-    }
-
-    header{
-        padding: 1.6rem 16rem;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .components__container{
         display: flex;
-        justify-content: center;
-        gap: 5rem;
+        align-items: center;
+        gap: 3rem;
     }
+
+
 }

@@ -1,25 +1,30 @@
-<header class="mobile__container">
-    <a [routerLink]="['/']">Ecommerce</a>
-    <button class="btnHamburguer" (click)="openMenu()"> <fa-icon class="icon menu" [icon]="menuIcon"></fa-icon> </button>
+<header>
+    <div class="mobile__container">
+        <a [routerLink]="['/']">Ecommerce</a>
+        <button class="btnHamburguer" (click)="openMenu()"> <fa-icon class="icon menu" [icon]="menuIcon"></fa-icon>
+        </button>
 
-    <div class="mobile__menu" [class.slideInRight]="menuToggle" [class.slideOutRight]="!menuToggle && hasInteracted">
-        <div class="elements__container">
-            <div class="back">
-                <button class="btn__back" (click)="openMenu()"> <fa-icon class="icon backI" [icon]="backIcon"></fa-icon> SALIR </button>
+        <div class="mobile__menu" [class.slideInRight]="menuToggle"
+            [class.slideOutRight]="!menuToggle && hasInteracted">
+            <div class="elements__container">
+                <div class="back">
+                    <button class="btn__back" (click)="openMenu()"> <fa-icon class="icon backI"
+                            [icon]="backIcon"></fa-icon>
+                        SALIR </button>
+                </div>
+                <a [routerLink]="['/home']" class="link" (click)="openMenu()">Home</a>
+                <a [routerLink]="['/products']" class="link" (click)="openMenu()">Products</a>
+                <a [routerLink]="['/cart']" class="link" (click)="openMenu()">Cart</a>
             </div>
-            <a [routerLink]="['/home']" class="link" (click)="openMenu()">Home</a>
-            <a [routerLink]="['/products']" class="link" (click)="openMenu()">Products</a>
-            <a [routerLink]="['/cart']" class="link" (click)="openMenu()">Cart</a>
         </div>
     </div>
-</header>
+    <div class="desktop__container">
+        <a [routerLink]="['/']">Ecommerce</a>
+        <div class="components__container">
+            <a [routerLink]="['/']">Home</a>
+            <a [routerLink]="['/products']">Products</a>
+        </div>
 
-<header class="desktop__container">
-    <a [routerLink]="['/']">Ecommerce</a>
-    <div class="components__container">
-        <a [routerLink]="['/']">Home</a>
-        <a [routerLink]="['/products']">Products</a>
+        <a [routerLink]="['/cart']"> <fa-icon class="icon cart" [icon]="cartIcon"></fa-icon> </a>
     </div>
-
-    <a [routerLink]="['/cart']"> <fa-icon class="icon cart" [icon]="cartIcon"></fa-icon> </a>
 </header>
