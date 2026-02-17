@@ -1,0 +1,42 @@
+@import '../styles/mixins';
+
+footer{
+    background-color: var(--black);
+    padding: 4.8rem 3.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: var(--white);
+    &.link{
+        font-size: 4rem;
+        &.title{
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+}
+
+.description__container{
+    .description{
+        color: var(--textFooter);
+    }
+}
+
+.socials__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+@include desktop{
+    footer{
+        padding: 10.4rem 16rem;
+    }
+}

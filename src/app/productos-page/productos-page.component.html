@@ -1,0 +1,100 @@
+<main>
+    <article class="filters">
+        <button class="btn categories" (click)="openCategoryModal()">Categories <fa-icon class="icon list"
+                [icon]="listIcon"></fa-icon> </button>
+        <select class="btn" name="filters" (change)="onSortChange($event)">
+            <option value="" selected disabled hidden>Filters</option>
+            <option value="price-asc">Lower Price</option>
+            <option value="price-desc">Higher Price</option>
+            <option value="rating-asc">Lower Rating</option>
+            <option value="rating-desc">Higher Rating</option>
+        </select>
+    </article>
+
+    <article class="brand__desktop">
+        <div class="brand--text">
+            <p>Brand</p>
+        </div>
+        <div class="brand__categories">
+            <label>
+                <input type="checkbox" (change)="onCheckBoxChange('electronics')"
+                    [checked]="facadeProducts.isCategorySelected('electronics')" />
+                Electronics
+            </label>
+
+            <label>
+                <input type="checkbox" (change)="onCheckBoxChange('jewelery')"
+                    [checked]="facadeProducts.isCategorySelected('jewelery')" />
+                Jewelery
+            </label>
+
+            <label>
+                <input type="checkbox" (change)="onCheckBoxChange(`men's clothing`)"
+                    [checked]="facadeProducts.isCategorySelected(`men's clothing`)" />
+                Men's clothing
+            </label>
+
+            <label>
+                <input type="checkbox" (change)="onCheckBoxChange(`women's clothing`)"
+                    [checked]="facadeProducts.isCategorySelected(`women's clothing`)" />
+                Women's clothing
+            </label>
+        </div>
+    </article>
+
+    <article class="productos">
+        <div class="filter__desktop">
+            <select class="filterSelect" name="filters" (change)="onSortChange($event)">
+                <option value="" selected disabled hidden>Filters</option>
+                <option value="price-asc">Lower Price</option>
+                <option value="price-desc">Higher Price</option>
+                <option value="rating-asc">Lower Rating</option>
+                <option value="rating-desc">Higher Rating</option>
+            </select>
+        </div>
+        <div class="productos__container">
+            @for (producto of productos$ | async; track $index) {
+            <div class="card">
+                <img [src]="producto.image" [alt]="producto.title">
+                <p class="title"> {{producto.title}} </p>
+                <p class="price"> {{producto.price | currency: 'MXN' : 'symbol-narrow' : '1.2-2'}} </p>
+                <button class="btnBuyNow" [routerLink]="['/productDetail', producto.id]">Buy Now</button>
+            </div>
+            }
+        </div>
+    </article>
+
+    <article class="modal categorias" [class.active]="categoryBoolean">
+        <div class="back__container">
+            <button class="btnSalir" (click)="openCategoryModal()"> <fa-icon class="icon back"
+                    [icon]="leftArrow"></fa-icon> SALIR </button>
+        </div>
+        <div class="options__container">
+            <label>
+                <input type="checkbox" (change)="onCheckBoxChange('electronics')"
+                    [checked]="facadeProducts.isCategorySelected('electronics')" />
+                Electronics
+            </label>
+
+            <label>
+                <input type="checkbox" (change)="onCheckBoxChange('jewelery')"
+                    [checked]="facadeProducts.isCategorySelected('jewelery')" />
+                Jewelery
+            </label>
+
+            <label>
+                <input type="checkbox" (change)="onCheckBoxChange(`men's clothing`)"
+                    [checked]="facadeProducts.isCategorySelected(`men's clothing`)" />
+                Men's clothing
+            </label>
+
+            <label>
+                <input type="checkbox" (change)="onCheckBoxChange(`women's clothing`)"
+                    [checked]="facadeProducts.isCategorySelected(`women's clothing`)" />
+                Women's clothing
+            </label>
+            <button (click)="onApply()"> Apply </button>
+        </div>
+
+    </article>
+</main>
