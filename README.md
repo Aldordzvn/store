@@ -4,14 +4,9 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ---
 
-Este proyecto es una aplicación de inventario de productos desarrollada con Angular v19, enfocada en aplicar buenas prácticas de arquitectura frontend y manejo de estado, utilizando un enfoque mobile first y una base de código clara y escalable.
+Proyecto Ecommerce que simula un flujo real de venta, desarrollado con Angular V19 con Standalone, maquetado con arquitectura Mobile First con escalado en Responsive Design.
 
-La aplicación permite crear, visualizar, editar y eliminar productos, manteniendo un control básico de inventario. El formulario de gestión está construido con Reactive Forms, lo que permite validaciones robustas, control preciso del estado de los campos y una mejor experiencia de usuario.
-
-Para la gestión de datos se utiliza Firebase Realtime Database consumida mediante su REST API, sin depender del SDK de Firebase. La comunicación con la API se maneja a través de Api Services desacoplados y una capa de Facade Services, lo que permite separar la lógica de negocio de los componentes y mantener un flujo de datos más predecible.
-
-El manejo asincrono y la transformación de datos se realiza con RxJS, aprovechando observables para gestionar peticiones HTTP, estados de edición y sincronización de datos entre vistas y servicios.
-
+Los datos son consumidos mediante la API REST de Fake Store API, la manipulación de los mismos esta desarrollado con programación reactiva utilizando RxJs, haciendo uso de Observables y un manejo de datos mediante Facades services para un flujo mas escalable.
 ---
 
 ## Development server
